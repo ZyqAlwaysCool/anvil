@@ -7,7 +7,7 @@
 
 services:
   redis:
-    image: redis:7-alpine
+    image: swr.cn-north-4.myhuaweicloud.com/ddn-k8s/docker.io/library/redis:7.0.14
     healthcheck:
       test: ["CMD", "redis-cli", "ping"]
       interval: 5s
@@ -15,7 +15,7 @@ services:
       retries: 5
 
   mongo:
-    image: mongo:7
+    image: swr.cn-north-4.myhuaweicloud.com/ddn-k8s/docker.io/mongo:latest
     healthcheck:
       test: ["CMD", "mongosh", "--eval", "db.adminCommand('ping')"]
       interval: 10s
