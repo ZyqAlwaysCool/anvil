@@ -122,6 +122,7 @@ docker compose up --scale worker=2
 
 - `configs/.env.example` 表示默认保守基线
 - `docker-compose.yaml` 会通过 `environment:` 覆盖启用完整任务链路
+- server / worker 日志挂载到 `deploy_docker/logs/`（对应容器内 `LOG_DIR`，默认 `var/log/anvil`）
 
 ## 关键能力说明
 

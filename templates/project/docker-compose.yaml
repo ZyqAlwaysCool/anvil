@@ -28,6 +28,8 @@ services:
       - "8080:8080"
     env_file:
       - configs/.env.example
+    volumes:
+      - ./deploy_docker/logs:/app/var/log/anvil-scaffold-project
     environment:
       TASK_ENABLED: "true"
       REDIS_ENABLED: "true"
@@ -42,9 +44,11 @@ services:
 
   worker:
     build: .
-    command: ["/app/worker"]
+    command: ["./worker"]
     env_file:
       - configs/.env.example
+    volumes:
+      - ./deploy_docker/logs:/app/var/log/anvil-scaffold-project
     environment:
       TASK_ENABLED: "true"
       REDIS_ENABLED: "true"

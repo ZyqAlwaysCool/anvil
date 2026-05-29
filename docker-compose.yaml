@@ -28,6 +28,8 @@ services:
       - "28888:28888"
     env_file:
       - .env
+    volumes:
+      - ./deploy_docker/logs:/app/var/log/anvil
     environment:
       TASK_ENABLED: "true"
       REDIS_ENABLED: "true"
@@ -42,9 +44,11 @@ services:
 
   worker:
     build: .
-    command: ["./worker"]
+    command: ["./worker"]  # 覆盖镜像默认 CMD ./server
     env_file:
       - .env
+    volumes:
+      - ./deploy_docker/logs:/app/var/log/anvil
     environment:
       TASK_ENABLED: "true"
       REDIS_ENABLED: "true"
