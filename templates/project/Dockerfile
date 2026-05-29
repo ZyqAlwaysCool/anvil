@@ -1,4 +1,6 @@
 # syntax=docker/dockerfile:1
+#
+# 本文件为 Dockerfile 唯一维护点；仓库根目录 Dockerfile 指向此处。
 
 ARG REGISTRY=swr.cn-north-4.myhuaweicloud.com/ddn-k8s/docker.io/library
 
@@ -36,5 +38,5 @@ WORKDIR /app
 COPY --from=builder /app/bin /app
 COPY --from=builder /app/configs/.env.example /app/.env
 
-EXPOSE 8080
+EXPOSE 28888
 CMD ["./server"]
