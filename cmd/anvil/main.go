@@ -5,7 +5,7 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/zyq/anvil/internal/cli/scaffold"
+	"github.com/ZyqAlwaysCool/anvil/internal/cli/scaffold"
 )
 
 const usage = `anvil - generate a runnable Go Agent project from the anvil runtime template

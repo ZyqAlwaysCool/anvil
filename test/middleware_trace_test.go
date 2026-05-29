@@ -6,7 +6,7 @@ import (
 	"testing"
 
 	"github.com/gin-gonic/gin"
-	httpmiddleware "github.com/zyq/anvil/internal/platform/http/middleware"
+	httpmiddleware "github.com/ZyqAlwaysCool/anvil/internal/platform/http/middleware"
 )
 
 func TestTraceIDMiddlewarePassThrough(t *testing.T) {

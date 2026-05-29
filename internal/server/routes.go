@@ -5,10 +5,10 @@ import (
 
 	"github.com/gin-gonic/gin"
 
-	"github.com/zyq/anvil/internal/agent"
-	"github.com/zyq/anvil/internal/platform/app"
-	"github.com/zyq/anvil/internal/platform/http/response"
-	"github.com/zyq/anvil/internal/platform/task"
+	"github.com/ZyqAlwaysCool/anvil/internal/agent"
+	"github.com/ZyqAlwaysCool/anvil/internal/platform/app"
+	"github.com/ZyqAlwaysCool/anvil/internal/platform/http/response"
+	"github.com/ZyqAlwaysCool/anvil/internal/platform/task"
 )
 
 // RegisterRoutes 只做路由聚合，不写业务规则。

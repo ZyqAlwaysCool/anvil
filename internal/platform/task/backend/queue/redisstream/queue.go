@@ -10,8 +10,8 @@ import (
 	"time"
 
 	"github.com/redis/go-redis/v9"
-	"github.com/zyq/anvil/internal/platform/config"
-	"github.com/zyq/anvil/internal/platform/task"
+	"github.com/ZyqAlwaysCool/anvil/internal/platform/config"
+	"github.com/ZyqAlwaysCool/anvil/internal/platform/task"
 )
 
 type Queue struct {

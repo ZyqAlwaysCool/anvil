@@ -4,8 +4,8 @@ import (
 	"context"
 	"testing"
 
-	"github.com/zyq/anvil/internal/platform/task"
-	"github.com/zyq/anvil/test/testkit"
+	"github.com/ZyqAlwaysCool/anvil/internal/platform/task"
+	"github.com/ZyqAlwaysCool/anvil/test/testkit"
 )
 
 func TestTaskManagerSubmit(t *testing.T) {

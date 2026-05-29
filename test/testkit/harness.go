@@ -8,8 +8,8 @@ import (
 	"time"
 
 	"github.com/gin-gonic/gin"
-	"github.com/zyq/anvil/internal/platform/config"
-	"github.com/zyq/anvil/internal/platform/task"
+	"github.com/ZyqAlwaysCool/anvil/internal/platform/config"
+	"github.com/ZyqAlwaysCool/anvil/internal/platform/task"
 )
 
 func init() {

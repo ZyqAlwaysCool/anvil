@@ -29,7 +29,7 @@ go run ./cmd/anvil new my-app --module github.com/acme/my-app
 ### 全局安装
 
 ```bash
-go install github.com/zyq/anvil/cmd/anvil@latest
+go install github.com/ZyqAlwaysCool/anvil/cmd/anvil@latest
 ```
 
 安装完成后可直接执行：

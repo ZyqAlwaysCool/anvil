@@ -4,8 +4,8 @@ import (
 	"testing"
 
 	"github.com/openai/openai-go/packages/param"
-	"github.com/zyq/anvil/internal/platform/config"
-	"github.com/zyq/anvil/internal/platform/llm"
+	"github.com/ZyqAlwaysCool/anvil/internal/platform/config"
+	"github.com/ZyqAlwaysCool/anvil/internal/platform/llm"
 )
 
 func TestBuildCompletionParamsToolsAndToolChoice(t *testing.T) {

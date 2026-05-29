@@ -4,7 +4,7 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/zyq/anvil/internal/platform/llm/output"
+	"github.com/ZyqAlwaysCool/anvil/internal/platform/llm/output"
 )
 
 type sampleOutput struct {

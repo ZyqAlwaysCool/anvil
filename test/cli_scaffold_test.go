@@ -6,7 +6,7 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/zyq/anvil/internal/cli/scaffold"
+	"github.com/ZyqAlwaysCool/anvil/internal/cli/scaffold"
 )
 
 func TestNewVarsValidNames(t *testing.T) {

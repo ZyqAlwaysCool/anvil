@@ -6,8 +6,8 @@ import (
 	"os/signal"
 	"syscall"
 
-	"github.com/zyq/anvil/internal/platform/app"
-	"github.com/zyq/anvil/internal/server"
+	"github.com/ZyqAlwaysCool/anvil/internal/platform/app"
+	"github.com/ZyqAlwaysCool/anvil/internal/server"
 )
 
 func main() {

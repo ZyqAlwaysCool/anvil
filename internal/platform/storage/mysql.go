@@ -6,7 +6,7 @@ import (
 	"fmt"
 	"time"
 
-	"github.com/zyq/anvil/internal/platform/config"
+	"github.com/ZyqAlwaysCool/anvil/internal/platform/config"
 	"gorm.io/driver/mysql"
 	"gorm.io/gorm"
 )

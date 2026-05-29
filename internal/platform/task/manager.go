@@ -9,8 +9,8 @@ import (
 	"strings"
 	"time"
 
-	"github.com/zyq/anvil/internal/platform/apierr"
-	"github.com/zyq/anvil/internal/platform/config"
+	"github.com/ZyqAlwaysCool/anvil/internal/platform/apierr"
+	"github.com/ZyqAlwaysCool/anvil/internal/platform/config"
 )
 
 type Manager struct {

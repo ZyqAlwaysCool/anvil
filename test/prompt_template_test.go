@@ -4,7 +4,7 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/zyq/anvil/internal/platform/llm/prompt"
+	"github.com/ZyqAlwaysCool/anvil/internal/platform/llm/prompt"
 )
 
 func TestPromptTemplateRender(t *testing.T) {

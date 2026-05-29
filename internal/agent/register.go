@@ -1,8 +1,8 @@
 package agent
 
 import (
-	"github.com/zyq/anvil/internal/agent/biz/example"
-	"github.com/zyq/anvil/internal/platform/app"
+	"github.com/ZyqAlwaysCool/anvil/internal/agent/biz/example"
+	"github.com/ZyqAlwaysCool/anvil/internal/platform/app"
 )
 
 func RegisterRoutes(a *app.ServerApp) error {

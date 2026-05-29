@@ -9,8 +9,8 @@ import (
 	"testing"
 	"time"
 
-	"github.com/zyq/anvil/internal/platform/config"
-	"github.com/zyq/anvil/internal/platform/llm"
+	"github.com/ZyqAlwaysCool/anvil/internal/platform/config"
+	"github.com/ZyqAlwaysCool/anvil/internal/platform/llm"
 )
 
 func TestGenerateStreamReturnsIncrementalChunks(t *testing.T) {

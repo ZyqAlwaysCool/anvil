@@ -5,7 +5,7 @@ import (
 	"fmt"
 	"time"
 
-	"github.com/zyq/anvil/internal/platform/config"
+	"github.com/ZyqAlwaysCool/anvil/internal/platform/config"
 	"go.mongodb.org/mongo-driver/v2/mongo"
 	"go.mongodb.org/mongo-driver/v2/mongo/options"
 )

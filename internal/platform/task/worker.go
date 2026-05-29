@@ -7,8 +7,8 @@ import (
 	"sync"
 	"time"
 
-	"github.com/zyq/anvil/internal/platform/config"
-	"github.com/zyq/anvil/internal/platform/logging"
+	"github.com/ZyqAlwaysCool/anvil/internal/platform/config"
+	"github.com/ZyqAlwaysCool/anvil/internal/platform/logging"
 )
 
 type Worker struct {

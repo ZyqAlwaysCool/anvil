@@ -7,7 +7,7 @@ import (
 	"github.com/gin-gonic/gin"
 	"github.com/golang-jwt/jwt/v5"
 
-	"github.com/zyq/anvil/internal/platform/apierr"
+	"github.com/ZyqAlwaysCool/anvil/internal/platform/apierr"
 )
 
 const jwtClaimsKey = "jwt_claims"

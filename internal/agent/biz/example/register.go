@@ -2,7 +2,7 @@ package example
 
 import (
 	"github.com/gin-gonic/gin"
-	"github.com/zyq/anvil/internal/platform/app"
+	"github.com/ZyqAlwaysCool/anvil/internal/platform/app"
 )
 
 // RegisterRoutes 注册示例 Agent HTTP 路由；要求 Server 已装配 Task Manager。

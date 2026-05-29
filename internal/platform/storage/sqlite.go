@@ -3,7 +3,7 @@ package storage
 import (
 	"fmt"
 
-	"github.com/zyq/anvil/internal/platform/config"
+	"github.com/ZyqAlwaysCool/anvil/internal/platform/config"
 	"gorm.io/driver/sqlite"
 	"gorm.io/gorm"
 )

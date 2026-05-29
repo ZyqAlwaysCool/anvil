@@ -7,7 +7,7 @@ import (
 	"path/filepath"
 	"strings"
 
-	"github.com/zyq/anvil/templates"
+	"github.com/ZyqAlwaysCool/anvil/templates"
 )
 
 const templateRoot = "project"

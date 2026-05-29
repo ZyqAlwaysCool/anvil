@@ -8,7 +8,7 @@ import (
 	"github.com/openai/openai-go"
 	"github.com/openai/openai-go/option"
 
-	"github.com/zyq/anvil/internal/platform/config"
+	"github.com/ZyqAlwaysCool/anvil/internal/platform/config"
 )
 
 type Client struct {

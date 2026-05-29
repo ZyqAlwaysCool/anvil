@@ -7,7 +7,7 @@ import (
 	"github.com/openai/openai-go"
 	"github.com/openai/openai-go/shared"
 
-	"github.com/zyq/anvil/internal/platform/config"
+	"github.com/ZyqAlwaysCool/anvil/internal/platform/config"
 )
 
 // BuildCompletionParams 把平台契约映射到底层 openai-go 请求；边界：平台类型在此收敛，业务不得直接依赖 SDK 类型。

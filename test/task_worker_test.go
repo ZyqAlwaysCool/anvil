@@ -7,8 +7,8 @@ import (
 	"testing"
 	"time"
 
-	"github.com/zyq/anvil/internal/platform/task"
-	"github.com/zyq/anvil/test/testkit"
+	"github.com/ZyqAlwaysCool/anvil/internal/platform/task"
+	"github.com/ZyqAlwaysCool/anvil/test/testkit"
 )
 
 func TestTaskWorkerSuccess(t *testing.T) {

@@ -5,8 +5,8 @@ import (
 	"os"
 	"testing"
 
-	"github.com/zyq/anvil/internal/platform/app"
-	"github.com/zyq/anvil/internal/platform/config"
+	"github.com/ZyqAlwaysCool/anvil/internal/platform/app"
+	"github.com/ZyqAlwaysCool/anvil/internal/platform/config"
 )
 
 func TestConfigLoadMissingRequired(t *testing.T) {
