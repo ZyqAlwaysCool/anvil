@@ -162,6 +162,20 @@ func TestScaffoldNewCreatesProject(t *testing.T) {
 		t.Fatalf("env example not rendered: %s", env)
 	}
 
+	compose, err := os.ReadFile(filepath.Join(target, "docker-compose.yaml"))
+	if err != nil {
+		t.Fatalf("read docker-compose.yaml: %v", err)
+	}
+	if !strings.Contains(string(compose), "redis:7.0.14") {
+		t.Fatalf("docker-compose should use shared redis image tag:\n%s", compose)
+	}
+	if !strings.Contains(string(compose), "var/log/demo-app") {
+		t.Fatalf("docker-compose log volume should use project name:\n%s", compose)
+	}
+	if strings.Contains(string(compose), "var/log/anvil") {
+		t.Fatalf("docker-compose should not keep anvil log path:\n%s", compose)
+	}
+
 	makefile, err := os.ReadFile(filepath.Join(target, "Makefile"))
 	if err != nil {
 		t.Fatalf("read Makefile: %v", err)

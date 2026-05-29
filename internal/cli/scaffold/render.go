@@ -18,11 +18,15 @@ func stripScaffoldBuildIgnore(raw []byte) []byte {
 // renderContent 对模板文件做占位变量替换。
 // 模板源码使用 anvil-scaffold-template / anvil-scaffold-project 作为稳定占位，
 // 以便 templates/project 在脚手架仓库内可被 go:build ignore 的 Go 文件通过编译检查。
-func renderContent(_ string, raw []byte, vars Vars) ([]byte, error) {
+func renderContent(path string, raw []byte, vars Vars) ([]byte, error) {
 	content := string(stripScaffoldBuildIgnore(raw))
 	content = strings.ReplaceAll(content, "anvil-scaffold-template", vars.ModuleName)
 	content = strings.ReplaceAll(content, "anvil-scaffold-project", vars.ProjectName)
 	content = strings.ReplaceAll(content, "{{.ModuleName}}", vars.ModuleName)
 	content = strings.ReplaceAll(content, "{{.ProjectName}}", vars.ProjectName)
+	// docker-compose 与 anvil 本仓共用；生成项目时将默认日志目录 anvil 替换为项目名。
+	if strings.HasSuffix(path, "docker-compose.yaml") || strings.HasSuffix(path, "docker-compose.yml") {
+		content = strings.ReplaceAll(content, "var/log/anvil", "var/log/"+vars.ProjectName)
+	}
 	return []byte(content), nil
 }
