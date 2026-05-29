@@ -3,8 +3,8 @@
 package agent
 
 import (
-	"{{.ModuleName}}/internal/agent/biz/example"
-	"{{.ModuleName}}/internal/platform/app"
+	"anvil-scaffold-template/internal/agent/biz/example"
+	"anvil-scaffold-template/internal/platform/app"
 )
 
 func RegisterRoutes(a *app.ServerApp) error {

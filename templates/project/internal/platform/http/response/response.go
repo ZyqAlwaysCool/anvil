@@ -7,8 +7,8 @@ import (
 
 	"github.com/gin-gonic/gin"
 
-	"{{.ModuleName}}/internal/platform/apierr"
-	httpmiddleware "{{.ModuleName}}/internal/platform/http/middleware"
+	"anvil-scaffold-template/internal/platform/apierr"
+	httpmiddleware "anvil-scaffold-template/internal/platform/http/middleware"
 )
 
 type BaseResponse struct {

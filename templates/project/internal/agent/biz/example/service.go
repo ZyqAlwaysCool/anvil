@@ -8,7 +8,7 @@ import (
 	"strings"
 	"time"
 
-	"{{.ModuleName}}/internal/platform/task"
+	"anvil-scaffold-template/internal/platform/task"
 )
 
 type Service struct {

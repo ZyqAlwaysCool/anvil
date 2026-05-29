@@ -9,8 +9,8 @@ import (
 	"sync"
 	"time"
 
-	"{{.ModuleName}}/internal/platform/config"
-	"{{.ModuleName}}/internal/platform/logging"
+	"anvil-scaffold-template/internal/platform/config"
+	"anvil-scaffold-template/internal/platform/logging"
 )
 
 type Worker struct {

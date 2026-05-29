@@ -9,7 +9,7 @@ import (
 	"log/slog"
 	"os"
 
-	"{{.ModuleName}}/internal/platform/config"
+	"anvil-scaffold-template/internal/platform/config"
 )
 
 type Bootstrap struct {

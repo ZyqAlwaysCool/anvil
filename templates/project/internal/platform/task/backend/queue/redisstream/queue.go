@@ -12,8 +12,8 @@ import (
 	"time"
 
 	"github.com/redis/go-redis/v9"
-	"{{.ModuleName}}/internal/platform/config"
-	"{{.ModuleName}}/internal/platform/task"
+	"anvil-scaffold-template/internal/platform/config"
+	"anvil-scaffold-template/internal/platform/task"
 )
 
 type Queue struct {

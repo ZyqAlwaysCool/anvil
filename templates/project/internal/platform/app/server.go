@@ -6,6 +6,7 @@ import (
 	"context"
 	"errors"
 	"fmt"
+	"io"
 	"log/slog"
 	"net/http"
 	"time"
@@ -15,14 +16,14 @@ import (
 	"go.mongodb.org/mongo-driver/v2/mongo"
 	"gorm.io/gorm"
 
-	"{{.ModuleName}}/internal/platform/config"
-	httpmiddleware "{{.ModuleName}}/internal/platform/http/middleware"
-	"{{.ModuleName}}/internal/platform/llm"
-	"{{.ModuleName}}/internal/platform/logging"
-	"{{.ModuleName}}/internal/platform/storage"
-	"{{.ModuleName}}/internal/platform/task"
-	redisstream "{{.ModuleName}}/internal/platform/task/backend/queue/redisstream"
-	taskmongo "{{.ModuleName}}/internal/platform/task/backend/storage/mongo"
+	"anvil-scaffold-template/internal/platform/config"
+	httpmiddleware "anvil-scaffold-template/internal/platform/http/middleware"
+	"anvil-scaffold-template/internal/platform/llm"
+	"anvil-scaffold-template/internal/platform/logging"
+	"anvil-scaffold-template/internal/platform/storage"
+	"anvil-scaffold-template/internal/platform/task"
+	redisstream "anvil-scaffold-template/internal/platform/task/backend/queue/redisstream"
+	taskmongo "anvil-scaffold-template/internal/platform/task/backend/storage/mongo"
 )
 
 type ServerOptions struct {
@@ -147,6 +148,11 @@ func (a *ServerApp) initLLM() error {
 
 func (a *ServerApp) initHTTP(opts ServerOptions) error {
 	gin.SetMode(a.Config.HTTP.GinMode)
+	// LOG_STDOUT 只约束平台 slog；Gin 在 debug 下会单独往控制台打路由信息，需显式关闭。
+	if !a.Config.Log.Stdout {
+		gin.DefaultWriter = io.Discard
+		gin.DefaultErrorWriter = io.Discard
+	}
 	engine := gin.New()
 	engine.Use(gin.Recovery())
 	engine.Use(httpmiddleware.TraceID())

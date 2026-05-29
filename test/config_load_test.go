@@ -4,6 +4,7 @@ import (
 	"context"
 	"os"
 	"testing"
+	"time"
 
 	"github.com/ZyqAlwaysCool/anvil/internal/platform/app"
 	"github.com/ZyqAlwaysCool/anvil/internal/platform/config"
@@ -46,6 +47,34 @@ func TestConfigLoadMongoRequiredWhenEnabled(t *testing.T) {
 	_, err := config.Load()
 	if err == nil {
 		t.Fatal("expected mongo validation error")
+	}
+}
+
+func TestConfigLoadAppliesLogTimezone(t *testing.T) {
+	oldLocal := time.Local
+	t.Cleanup(func() {
+		time.Local = oldLocal
+	})
+
+	setValidBaseConfig(t)
+	t.Setenv("LOG_TIMEZONE", "Asia/Shanghai")
+
+	_, err := config.Load()
+	if err != nil {
+		t.Fatalf("load config: %v", err)
+	}
+	if time.Local.String() != "Asia/Shanghai" {
+		t.Fatalf("time.Local = %s, want Asia/Shanghai", time.Local)
+	}
+}
+
+func TestConfigLoadInvalidLogTimezone(t *testing.T) {
+	setValidBaseConfig(t)
+	t.Setenv("LOG_TIMEZONE", "Invalid/Zone")
+
+	_, err := config.Load()
+	if err == nil {
+		t.Fatal("expected invalid timezone error")
 	}
 }
 

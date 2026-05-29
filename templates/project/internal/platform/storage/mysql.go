@@ -10,7 +10,7 @@ import (
 
 	"gorm.io/driver/mysql"
 	"gorm.io/gorm"
-	"{{.ModuleName}}/internal/platform/config"
+	"anvil-scaffold-template/internal/platform/config"
 )
 
 // NewMySQL 创建 GORM MySQL 连接并执行 Ping。

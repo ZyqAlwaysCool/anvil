@@ -25,9 +25,9 @@ services:
   server:
     build: .
     ports:
-      - "8080:8080"
+      - "28888:28888"
     env_file:
-      - configs/.env.example
+      - .env
     environment:
       TASK_ENABLED: "true"
       REDIS_ENABLED: "true"
@@ -44,7 +44,7 @@ services:
     build: .
     command: ["./worker"]
     env_file:
-      - configs/.env.example
+      - .env
     environment:
       TASK_ENABLED: "true"
       REDIS_ENABLED: "true"

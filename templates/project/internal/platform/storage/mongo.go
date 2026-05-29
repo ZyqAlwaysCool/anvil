@@ -9,7 +9,7 @@ import (
 
 	"go.mongodb.org/mongo-driver/v2/mongo"
 	"go.mongodb.org/mongo-driver/v2/mongo/options"
-	"{{.ModuleName}}/internal/platform/config"
+	"anvil-scaffold-template/internal/platform/config"
 )
 
 // NewMongo 创建 Mongo 客户端并执行 Ping。

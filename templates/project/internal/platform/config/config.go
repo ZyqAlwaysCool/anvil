@@ -45,6 +45,7 @@ type LogConfig struct {
 	FilePrefix    string
 	Stdout        bool
 	RetentionDays int
+	Timezone      string
 }
 
 type RedisConfig struct {
@@ -201,16 +202,36 @@ func Load() (Config, error) {
 	cfg.Log = LogConfig{
 		Level:         logLevel,
 		Format:        logFormat,
-		Dir:           envString("LOG_DIR", "var/log/{{.ProjectName}}"),
+		Dir:           envString("LOG_DIR", "var/log/anvil-scaffold-project"),
 		FilePrefix:    envString("LOG_FILE_PREFIX", "app"),
 		Stdout:        envBool("LOG_STDOUT", true),
 		RetentionDays: envInt("LOG_RETENTION_DAYS", 7),
+		Timezone:      envString("LOG_TIMEZONE", ""),
+	}
+
+	if err := applyLogTimezone(cfg.Log.Timezone); err != nil {
+		return Config{}, err
 	}
 
 	if err := cfg.Validate(); err != nil {
 		return Config{}, err
 	}
 	return cfg, nil
+}
+
+// applyLogTimezone 在 godotenv 加载后设置进程本地时区。
+// Go 不会在读取 .env 后自动重新解析 TZ，本地 make run 需通过 LOG_TIMEZONE 与 Docker 对齐。
+func applyLogTimezone(tz string) error {
+	tz = strings.TrimSpace(tz)
+	if tz == "" {
+		return nil
+	}
+	loc, err := time.LoadLocation(tz)
+	if err != nil {
+		return fmt.Errorf("invalid LOG_TIMEZONE %q: %w", tz, err)
+	}
+	time.Local = loc
+	return nil
 }
 
 func MustLoad() Config {

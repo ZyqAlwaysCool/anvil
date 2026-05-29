@@ -4,6 +4,7 @@ import (
 	"context"
 	"errors"
 	"fmt"
+	"io"
 	"log/slog"
 	"net/http"
 	"time"
@@ -145,6 +146,11 @@ func (a *ServerApp) initLLM() error {
 
 func (a *ServerApp) initHTTP(opts ServerOptions) error {
 	gin.SetMode(a.Config.HTTP.GinMode)
+	// LOG_STDOUT 只约束平台 slog；Gin 在 debug 下会单独往控制台打路由信息，需显式关闭。
+	if !a.Config.Log.Stdout {
+		gin.DefaultWriter = io.Discard
+		gin.DefaultErrorWriter = io.Discard
+	}
 	engine := gin.New()
 	engine.Use(gin.Recovery())
 	engine.Use(httpmiddleware.TraceID())

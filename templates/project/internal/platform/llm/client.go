@@ -10,7 +10,7 @@ import (
 	"github.com/openai/openai-go"
 	"github.com/openai/openai-go/option"
 
-	"{{.ModuleName}}/internal/platform/config"
+	"anvil-scaffold-template/internal/platform/config"
 )
 
 type Client struct {

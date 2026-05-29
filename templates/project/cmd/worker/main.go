@@ -8,8 +8,8 @@ import (
 	"os/signal"
 	"syscall"
 
-	"{{.ModuleName}}/internal/agent"
-	"{{.ModuleName}}/internal/platform/app"
+	"anvil-scaffold-template/internal/agent"
+	"anvil-scaffold-template/internal/platform/app"
 )
 
 func main() {

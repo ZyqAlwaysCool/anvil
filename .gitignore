@@ -1,5 +1,6 @@
 codex-docs/
 var/log/
 bin/
+.run/
 .env
 AGENTS.md

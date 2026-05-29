@@ -7,11 +7,11 @@ import (
 
 	"github.com/gin-gonic/gin"
 
-	"{{.ModuleName}}/internal/platform/apierr"
-	"{{.ModuleName}}/internal/platform/app"
-	httpmiddleware "{{.ModuleName}}/internal/platform/http/middleware"
-	"{{.ModuleName}}/internal/platform/http/response"
-	"{{.ModuleName}}/internal/platform/task"
+	"anvil-scaffold-template/internal/platform/apierr"
+	"anvil-scaffold-template/internal/platform/app"
+	httpmiddleware "anvil-scaffold-template/internal/platform/http/middleware"
+	"anvil-scaffold-template/internal/platform/http/response"
+	"anvil-scaffold-template/internal/platform/task"
 )
 
 func invalidNameError() *apierr.Error {

@@ -10,13 +10,13 @@ import (
 	"github.com/redis/go-redis/v9"
 	"go.mongodb.org/mongo-driver/v2/mongo"
 
-	"{{.ModuleName}}/internal/platform/config"
-	"{{.ModuleName}}/internal/platform/llm"
-	"{{.ModuleName}}/internal/platform/logging"
-	"{{.ModuleName}}/internal/platform/storage"
-	"{{.ModuleName}}/internal/platform/task"
-	redisstream "{{.ModuleName}}/internal/platform/task/backend/queue/redisstream"
-	taskmongo "{{.ModuleName}}/internal/platform/task/backend/storage/mongo"
+	"anvil-scaffold-template/internal/platform/config"
+	"anvil-scaffold-template/internal/platform/llm"
+	"anvil-scaffold-template/internal/platform/logging"
+	"anvil-scaffold-template/internal/platform/storage"
+	"anvil-scaffold-template/internal/platform/task"
+	redisstream "anvil-scaffold-template/internal/platform/task/backend/queue/redisstream"
+	taskmongo "anvil-scaffold-template/internal/platform/task/backend/storage/mongo"
 )
 
 type WorkerOptions struct {

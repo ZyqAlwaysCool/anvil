@@ -7,7 +7,7 @@ import (
 
 	"gorm.io/driver/sqlite"
 	"gorm.io/gorm"
-	"{{.ModuleName}}/internal/platform/config"
+	"anvil-scaffold-template/internal/platform/config"
 )
 
 // NewSQLite 创建 GORM SQLite 连接并执行 Ping。

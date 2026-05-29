@@ -11,8 +11,8 @@ import (
 	"strings"
 	"time"
 
-	"{{.ModuleName}}/internal/platform/apierr"
-	"{{.ModuleName}}/internal/platform/config"
+	"anvil-scaffold-template/internal/platform/apierr"
+	"anvil-scaffold-template/internal/platform/config"
 )
 
 type Manager struct {

@@ -4,7 +4,7 @@ package example
 
 import (
 	"github.com/gin-gonic/gin"
-	"{{.ModuleName}}/internal/platform/app"
+	"anvil-scaffold-template/internal/platform/app"
 )
 
 // RegisterRoutes 注册示例 Agent HTTP 路由；要求 Server 已装配 Task Manager。

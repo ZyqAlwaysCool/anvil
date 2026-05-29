@@ -20,4 +20,4 @@ lint:
 	go vet ./...
 
 clean:
-	rm -rf bin var/log/{{.ProjectName}}
+	rm -rf bin var/log/anvil-scaffold-project

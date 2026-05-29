@@ -1,4 +1,4 @@
-# {{.ProjectName}}
+# anvil-scaffold-project
 
 Agent platform starter generated from the platform scaffold. This project includes an HTTP server, optional background worker, and a sample agent under `internal/agent/biz/example`.
 

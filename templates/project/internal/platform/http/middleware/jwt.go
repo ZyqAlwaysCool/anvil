@@ -9,7 +9,7 @@ import (
 	"github.com/gin-gonic/gin"
 	"github.com/golang-jwt/jwt/v5"
 
-	"{{.ModuleName}}/internal/platform/apierr"
+	"anvil-scaffold-template/internal/platform/apierr"
 )
 
 const jwtClaimsKey = "jwt_claims"

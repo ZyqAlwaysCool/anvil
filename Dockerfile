@@ -33,5 +33,5 @@ WORKDIR /app
 COPY --from=builder /app/bin /app
 COPY --from=builder /app/configs/.env.example /app/.env
 
-EXPOSE 8080
+EXPOSE 28888
 ENTRYPOINT ["./server"]
