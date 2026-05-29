@@ -1,0 +1,58 @@
+# 扩容 worker: docker compose up --scale worker=2
+#
+# 配置分层说明：
+# 1. env_file 加载 configs/.env.example —— 保守基线（TASK/REDIS/MONGO/LLM 默认关闭）
+# 2. environment 覆盖 —— 仅在 compose 场景下启用完整任务链路
+# 本地 make run 请直接使用 .env.example，不会自动启用任务系统。
+
+services:
+  redis:
+    image: redis:7-alpine
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 5s
+      timeout: 3s
+      retries: 5
+
+  mongo:
+    image: mongo:7
+    healthcheck:
+      test: ["CMD", "mongosh", "--eval", "db.adminCommand('ping')"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  server:
+    build: .
+    ports:
+      - "8080:8080"
+    env_file:
+      - configs/.env.example
+    environment:
+      TASK_ENABLED: "true"
+      REDIS_ENABLED: "true"
+      MONGO_ENABLED: "true"
+      REDIS_ADDRS: redis:6379
+      MONGO_URI: mongodb://mongo:27017
+    depends_on:
+      redis:
+        condition: service_healthy
+      mongo:
+        condition: service_healthy
+
+  worker:
+    build: .
+    command: ["./worker"]
+    env_file:
+      - configs/.env.example
+    environment:
+      TASK_ENABLED: "true"
+      REDIS_ENABLED: "true"
+      MONGO_ENABLED: "true"
+      REDIS_ADDRS: redis:6379
+      MONGO_URI: mongodb://mongo:27017
+    depends_on:
+      redis:
+        condition: service_healthy
+      mongo:
+        condition: service_healthy

@@ -1,0 +1,5 @@
+codex-docs/
+var/log/
+bin/
+.env
+AGENTS.md
